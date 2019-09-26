@@ -1,5 +1,5 @@
 # PyProfilers
-PyProfilers is collection of wrapper functions to various Python profilers which aims to make profiling more convenient.
+PyProfilers is collection of wrapper functions for various Python profilers which aims to make profiling more convenient.
 
 
 ## Simple examples:
