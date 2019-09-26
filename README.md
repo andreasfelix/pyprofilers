@@ -1,6 +1,12 @@
 # PyProfilers
 PyProfilers is collection of wrapper functions for various Python profilers which aims to make profiling more convenient.
 
+## Installing
+Install and update using pip:
+
+```sh
+pip install -U pyprofilers
+```
 
 ## Simple examples:
 
