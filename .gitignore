@@ -1,0 +1,19 @@
+.DS_Store
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+sdist/
+*.egg
+*.egg-info/
+
+# IDE
+.idea
+.vscode
