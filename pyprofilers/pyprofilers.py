@@ -52,9 +52,9 @@ def profile(_func=None, *, num=1, out_lines=30, sort_by='cumulative'):
             ps = pstats.Stats(pr, stream=s).sort_stats(sort_by)
 
             # Print stats
-            print(f"\n{func.__name__}:\n"
-                  f"{'': <9}{timer1.__name__}: {t1:.9f}s\n"
-                  f"{'': <9}{timer2.__name__}: {t2:.9f}s")
+            print(f'\n{func.__name__}:\n'
+                  f'{"": <9}{timer1.__name__}: {t1:.9f}s\n'
+                  f'{"": <9}{timer2.__name__}: {t2:.9f}s')
             if out_lines:
                 ps.print_stats()
                 tmp = s.getvalue()
@@ -89,7 +89,7 @@ def profile_by_line(_func=None, *, exit=False):
             if exit:
                 nonlocal counter
                 if counter == exit:
-                    print(f"Exit after {formatted_number(counter)} call of {func.__name__}")
+                    print(f'Exit after {formatted_number(counter)} call of {func.__name__}')
                     sys.exit()
                 counter += 1
             return result
@@ -117,9 +117,9 @@ def profile_with_yappi(func):
         thread_stats = yappi.get_thread_stats()
 
         # Print stats
-        print(f"\n\n{func.__name__}:\n\n"
-              f"{'': <9}{timer1.__name__}: {t1:.9f}s\n"
-              f"{'': <9}{timer2.__name__}: {t2:.9f}s")
+        print(f'\n\n{func.__name__}:\n\n'
+              f'{"": <9}{timer1.__name__}: {t1:.9f}s\n'
+              f'{"": <9}{timer2.__name__}: {t2:.9f}s')
         func_stats.print_all()
         thread_stats.print_all()
         return result
