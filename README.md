@@ -8,7 +8,7 @@ Install and update using pip:
 pip install -U pyprofilers
 ```
 
-## Simple examples:
+## Simple examples
 
 ### Import PyProfilers
 ```python
