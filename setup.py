@@ -19,7 +19,7 @@ setup(
     packages=['pyprofilers'],
     install_requires=[
 #         'line_profiler',
-        'yappi''
+        'yappi'
     ],
     python_requires='>=3.6',
 )
