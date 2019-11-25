@@ -17,6 +17,9 @@ setup(
     author=about['__author__'],
     license=about['__license__'],
     packages=['pyprofilers'],
-    install_requires=['line_profiler', 'yappi'],
+    install_requires=[
+#         'line_profiler',
+        'yappi''
+    ],
     python_requires='>=3.6',
 )
