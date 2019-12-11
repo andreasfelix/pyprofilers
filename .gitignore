@@ -12,6 +12,7 @@ build/
 dist/
 sdist/
 *.egg
+*.eggs
 *.egg-info/
 
 # IDE

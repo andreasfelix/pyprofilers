@@ -30,7 +30,7 @@ def func():
 - `out_lines` controls the number of lines in results. Use `None` or ommit the arugment to show all.
 
 ### Profile with [line_profiler](https://github.com/rkern/line_profiler)
-> :warning: **NOTE:** `line_profiler` has to be installed manually as the pip installation does currently not work!
+> :warning: **NOTE:** The `line_profiler` pip intallation does currently not work! Therefore pyprofilers will install a fork of `line_profiler`
 
 Use the [line_profiler](https://github.com/rkern/line_profiler) to list time spent within each line of `func`:
 
