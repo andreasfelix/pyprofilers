@@ -19,7 +19,7 @@ setup(
     packages=["pyprofilers"],
     install_requires=[
         "cython",
-        "line_profiler @ git+https://github.com/andreasfelix/line_profiler@pyproject",
+        "line_profiler",
         "yappi",
     ],
     python_requires=">=3.6",

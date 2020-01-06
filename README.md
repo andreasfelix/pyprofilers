@@ -17,7 +17,7 @@ import pyprofilers as pp
 
 
 ### Profile with [cProfile](https://docs.python.org/3/library/profile.html#module-cProfile)
-Use the standard Python [cProfile](https://docs.python.org/3/library/profile.html#module-cProfile) to list 
+Use the standard Python [cProfile](https://docs.python.org/3/library/profile.html#module-cProfile) to list
 the cumulative time spent in the function `func` and all its subfunctions:
 
 ```python
@@ -29,10 +29,9 @@ def func():
 - `sort_by` can be used to sort the results according to the supplied criteria. All criterias can be found [here.](https://docs.python.org/2/library/profile.html#pstats.Stats.sort_stats)
 - `out_lines` controls the number of lines in results. Use `None` or ommit the arugment to show all.
 
-### Profile with [line_profiler](https://github.com/rkern/line_profiler)
-> :warning: **NOTE:** The `line_profiler` pip intallation does currently not work! Therefore pyprofilers will install a fork of `line_profiler`
+### Profile with [line_profiler](https://github.com/pyutils/line_profiler)
 
-Use the [line_profiler](https://github.com/rkern/line_profiler) to list time spent within each line of `func`:
+Use the [line_profiler](https://github.com/pyutils/line_profiler) to list time spent within each line of `func`:
 
 ```python
 @pp.profile_by_line(exit=1)
