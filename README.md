@@ -8,7 +8,7 @@ Install and update using pip:
 pip install -U pyprofilers
 ```
 
-## Simple examples
+## Usage
 
 ### Import PyProfilers
 ```python
@@ -52,3 +52,6 @@ def func():
 ```
 
 The `num` argument can be used to specify how often the function should be executed.
+
+## License
+[GNU General Public License v3.0](https://github.com/andreasfelix/pyprofilers/blob/master/LICENSE)
