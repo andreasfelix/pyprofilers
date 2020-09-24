@@ -79,33 +79,30 @@ def profile(_func=None, *, num=1, out_lines=30, sort_by="cumulative"):
         return decorator_profile(_func)
 
 
-def formatted_number(number):
-    remainder = number % 10
-    suffix = ("st", "nd", "rd")[remainder - 1] if remainder < 3 else "th"
-    return f"{number}{suffix}"
+def suffix(number):
+    return f"{number}{('st', 'nd', 'rd', 'th')[min(number % 10 - 1, 3)]}"
 
 
 def profile_by_line(_func=None, *, exit=False, skip=None):
-    def decorator_profile(func):
+    def decorator_profile(o_func):
         from line_profiler import LineProfiler
 
         profile = LineProfiler()
-        func = simple_timer(profile(func))
-        counter = 1
+        func = simple_timer(profile(o_func))
+        counter = 0
 
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
-            result = func(*args, **kwargs)
-            if skip is None or skip >= counter:
+            nonlocal counter
+            if skip is None or counter >= skip:
+                result = func(*args, **kwargs)
                 profile.print_stats()
-            if exit:
-                nonlocal counter
-                if counter == exit:
-                    print(
-                        f"Exit after {formatted_number(counter)} call of {func.__name__}"
-                    )
+                if exit:
+                    print(f"Exited after {suffix(counter + 1)} call of {func.__name__}")
                     sys.exit()
-                counter += 1
+            else:
+                result = o_func(*args, **kwargs)
+            counter += 1
             return result
 
         return wrapper
