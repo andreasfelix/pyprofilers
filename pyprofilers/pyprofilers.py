@@ -85,7 +85,7 @@ def formatted_number(number):
     return f"{number}{suffix}"
 
 
-def profile_by_line(_func=None, *, exit=False):
+def profile_by_line(_func=None, *, exit=False, skip=None):
     def decorator_profile(func):
         from line_profiler import LineProfiler
 
@@ -96,7 +96,8 @@ def profile_by_line(_func=None, *, exit=False):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
-            profile.print_stats()
+            if pass is None or counter > skip:
+                profile.print_stats()
             if exit:
                 nonlocal counter
                 if counter == exit:
