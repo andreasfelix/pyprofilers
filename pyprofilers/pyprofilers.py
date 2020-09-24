@@ -96,7 +96,7 @@ def profile_by_line(_func=None, *, exit=False, skip=None):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
-            if pass is None or counter > skip:
+            if skip is None or skip >= counter:
                 profile.print_stats()
             if exit:
                 nonlocal counter
